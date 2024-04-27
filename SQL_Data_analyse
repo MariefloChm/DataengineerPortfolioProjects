@@ -1,4 +1,6 @@
-### -- Trouver les 5 produits les plus vendus :
+
+
+-- Trouver les 5 produits les plus vendus :
 
 SELECT TOP 5 
     p.ProductID, 
@@ -16,7 +18,7 @@ ORDER BY
 
 
 
-### -- Calculer le chiffre d'affaires total :
+-- Calculer le chiffre d'affaires total :
 
 SELECT SUM(Price * Quantity) as TotalRevenue, 'EUR' as Currency
 FROM OrderDetails;
@@ -42,7 +44,7 @@ ORDER BY
 
 
 
-### -- Trouver les clients qui ont dépensé le plus :
+-- Trouver les clients qui ont dépensé le plus :
 
 SELECT c.CustomerID, c.FirstName, c.LastName, SUM(od.Price * od.Quantity) as TotalSpent
 FROM Customers c
@@ -52,7 +54,7 @@ GROUP BY c.CustomerID, c.FirstName, c.LastName
 ORDER BY TotalSpent DESC;
 
 
-### -- Nombre de commandes par client :
+-- Nombre de commandes par client :
 
 SELECT c.CustomerID, c.FirstName, c.LastName, COUNT(o.OrderID) as NumberOfOrders
 FROM Customers c
@@ -62,7 +64,7 @@ ORDER BY NumberOfOrders DESC;
 
 
 
-### -- Revenu généré par jour, mois ou année :
+-- Revenu généré par jour, mois ou année :
 
 SELECT CAST(OrderDate AS DATE) as Date, SUM(Price * Quantity) as DailyRevenue
 FROM Orders o
@@ -72,11 +74,11 @@ ORDER BY Date;
 
 
 
-### -- SELECT ProductID, Name, StockQuantity
+-- SELECT ProductID, Name, StockQuantity
 FROM Products
 
 
-### -- Inventaire actuel des produits :
+-- Inventaire actuel des produits :
 
 SELECT ProductID, Name, StockQuantity
 FROM Products
@@ -84,7 +86,7 @@ WHERE StockQuantity < 10; -- exemple pour les produits avec peu de stock
 
 
 
-### -- Calcul du panier moyen :
+-- Calcul du panier moyen :
 
 SELECT 
   AVG(TotalPrice) AS AverageBasketValue
@@ -101,7 +103,7 @@ FROM
 
 
 
-### -- Produits souvent achetés ensemble :
+-- Produits souvent achetés ensemble :
 
 SELECT 
   od1.ProductID AS ProductID1, 
@@ -127,7 +129,7 @@ ORDER BY
 
 
 
-### -- Durée moyenne entre la commande et la livraison :
+-- Durée moyenne entre la commande et la livraison :
 
 SELECT 
   AVG(DATEDIFF(day, OrderDate, ShippedDate)) AS AverageShippingDuration
