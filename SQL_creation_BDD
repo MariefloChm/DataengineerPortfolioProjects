@@ -1,0 +1,169 @@
+-- Création de la base de données
+
+CREATE DATABASE e_commerce;
+
+
+-- Création de la table Clients
+
+CREATE TABLE Customers (
+    CustomerID INT IDENTITY PRIMARY KEY,
+    FirstName NVARCHAR(255) NOT NULL,
+    LastName NVARCHAR(255) NOT NULL,
+    Email NVARCHAR(255),
+    Address NVARCHAR(255),
+    City NVARCHAR(255),
+    PostalCode NVARCHAR(10),
+    Country NVARCHAR(255)
+);
+GO
+SELECT * FROM Customers
+
+
+-- Création de la table Produits
+
+CREATE TABLE Products (
+    ProductID INT IDENTITY PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL,
+    Description NVARCHAR(MAX),
+    Price DECIMAL(10, 2) NOT NULL,
+    StockQuantity INT NOT NULL
+);
+GO
+
+INSERT INTO Products (Name, Description, Price, StockQuantity) VALUES
+('Chaise de bureau', 'Chaise de bureau ergonomique noire', 120.00, 15),
+('Clavier mécanique', 'Clavier mécanique rétroéclairé', 85.00, 10),
+('Souris sans fil', 'Souris sans fil précise et ergonomique', 35.00, 25),
+('Écran LED 24 pouces', 'Écran LED pour ordinateur 24 pouces Full HD', 180.00, 8),
+('Tapis de souris', 'Tapis de souris grand format', 12.00, 50),
+('Webcam HD', 'Webcam Full HD 1080p avec microphone intégré', 65.00, 20),
+('Casque audio', 'Casque audio stéréo avec isolation phonique', 50.00, 15),
+('Sac à dos ordinateur', 'Sac à dos pour ordinateur portable 15 pouces', 45.00, 18),
+('Tablette graphique', 'Tablette graphique avec stylet', 99.00, 5),
+('Fauteuil gaming', 'Fauteuil ergonomique pour joueurs', 190.00, 6),
+('Disque dur externe', 'Disque dur externe 1To USB 3.0', 75.00, 30),
+('Routeur Wi-Fi', 'Routeur Wi-Fi 6 avec quatre antennes', 130.00, 12),
+('Enceinte Bluetooth', 'Enceinte Bluetooth portable', 40.00, 22),
+('Lampe de bureau', 'Lampe de bureau LED avec variateur', 29.00, 10),
+('Montre intelligente', 'Montre intelligente avec suivi de l activité', 199.00, 14),
+('Câble HDMI', 'Câble HDMI 2 mètres', 9.00, 80),
+('Microphone USB', 'Microphone USB pour enregistrement', 120.00, 11),
+('Imprimante laser', 'Imprimante laser monochrome', 109.00, 7),
+('Chaise pliante', 'Chaise pliante légère en métal', 20.00, 40),
+('Souris gaming', 'Souris gaming avec 12 boutons programmables', 70.00, 13);
+
+
+
+
+GO
+
+
+SELECT * FROM Products
+
+
+
+-- Création de la table Commandes
+
+CREATE TABLE Orders (
+    OrderID INT IDENTITY PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATETIME NOT NULL,
+    ShippedDate DATETIME,
+    ShipAddress NVARCHAR(255),
+    ShipCity NVARCHAR(255),
+    ShipPostalCode NVARCHAR(10),
+    ShipCountry NVARCHAR(255),
+    Status NVARCHAR(50),
+    CONSTRAINT FK_Orders_Customers FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+GO
+
+INSERT INTO Orders (CustomerID, OrderDate, ShippedDate, ShipAddress, ShipCity, ShipPostalCode, ShipCountry, Status) VALUES
+(1, '2024-04-01', '2024-04-03', '123 rue de Paris', 'Paris', '75001', 'France', 'Expédié'),
+(2, '2024-04-02', '2024-04-04', '234 rue de Lille', 'Lille', '59000', 'France', 'Expédié'),
+(3, '2024-04-03', NULL, '345 avenue du Prado', 'Marseille', '13008', 'France', 'En cours'),
+(4, '2024-04-04', '2024-04-06', '456 boulevard Saint-Germain', 'Lyon', '69002', 'France', 'Expédié'),
+(5, '2024-04-05', NULL, '567 place de la République', 'Toulouse', '31000', 'France', 'En cours'),
+(6, '2024-04-06', '2024-04-08', '678 rue de Bretagne', 'Nantes', '44000', 'France', 'Expédié'),
+(7, '2024-04-07', NULL, '789 chemin des Oliviers', 'Nice', '06000', 'France', 'En cours'),
+(8, '2024-04-08', '2024-04-10', '890 allée des Ormes', 'Strasbourg', '67000', 'France', 'Expédié'),
+(9, '2024-04-09', NULL, '901 rue des Lilas', 'Montpellier', '34000', 'France', 'En cours'),
+(10, '2024-04-10', '2024-04-12', '012 avenue des Peupliers', 'Bordeaux', '33000', 'France', 'Expédié'),
+(11, '2024-04-11', NULL, '123 rue de Belleville', 'Paris', '75020', 'France', 'En cours'),
+(12, '2024-04-12', '2024-04-14', '234 boulevard de la Liberté', 'Lille', '59006', 'France', 'Expédié'),
+(13, '2024-04-13', NULL, '345 avenue du Fort', 'Marseille', '13010', 'France', 'En cours'),
+(14, '2024-04-14', '2024-04-16', '456 place Victor Hugo', 'Lyon', '69004', 'France', 'Expédié'),
+(15, '2024-04-15', NULL, '567 rue des Écoles', 'Toulouse', '31003', 'France', 'En cours'),
+(16, '2024-04-16', '2024-04-18', '678 avenue de Verdun', 'Nantes', '44001', 'France', 'Expédié'),
+(17, '2024-04-17', NULL, '789 chemin du Roy', 'Nice', '06001', 'France', 'En cours'),
+(18, '2024-04-18', '2024-04-20', '890 rue des Saints Pères', 'Strasbourg', '67001', 'France', 'Expédié'),
+(19, '2024-04-19', NULL, '901 boulevard des Anges', 'Montpellier', '34001', 'France', 'En cours'),
+(20, '2024-04-20', '2024-04-22', '012 place de l Opéra', 'Bordeaux', '33001', 'France', 'Expédié');
+
+GO 
+
+SELECT * FROM Orders;
+
+
+-- Création de la table détails commandes
+
+CREATE TABLE OrderDetails (
+    OrderDetailID INT IDENTITY PRIMARY KEY,
+    OrderID INT,
+    ProductID INT,
+    Quantity INT NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL,
+    Discount DECIMAL(10, 2),
+    CONSTRAINT FK_OrderDetails_Orders FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    CONSTRAINT FK_OrderDetails_Products FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+GO
+
+INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Price, Discount) VALUES
+
+(1, 1, 2, 120.00, 0),
+(1, 3, 1, 35.00, 0),
+(2, 2, 1, 85.00, 0.05),
+(2, 4, 1, 180.00, 0),
+(3, 5, 2, 12.00, 0),
+(3, 1, 1, 120.00, 0.10),
+(4, 6, 1, 65.00, 0),
+(4, 7, 1, 50.00, 0.05),
+(5, 8, 1, 45.00, 0),
+(5, 9, 1, 99.00, 0),
+(6, 10, 1, 190.00, 0),
+(6, 11, 1, 75.00, 0.15),
+(7, 12, 1, 130.00, 0),
+(7, 13, 2, 40.00, 0),
+(8, 14, 1, 29.00, 0),
+(8, 15, 1, 199.00, 0.10),
+(9, 16, 1, 9.00, 0),
+(9, 17, 1, 120.00, 0),
+(10, 18, 1, 109.00, 0.05),
+(10, 19, 1, 20.00, 0),
+(11, 2, 1, 85.00, 0.05),
+(11, 4, 1, 180.00, 0),
+(12, 5, 3, 12.00, 0.10),
+(12, 1, 1, 120.00, 0),
+(13, 6, 2, 65.00, 0),
+(13, 7, 2, 50.00, 0.05),
+(14, 8, 1, 45.00, 0),
+(14, 9, 1, 99.00, 0.10),
+(15, 10, 1, 190.00, 0),
+(15, 11, 2, 75.00, 0),
+(16, 12, 1, 130.00, 0.05),
+(16, 13, 1, 40.00, 0),
+(17, 14, 1, 29.00, 0),
+(17, 15, 1, 199.00, 0.10),
+(18, 16, 1, 9.00, 0),
+(18, 17, 1, 120.00, 0),
+(19, 18, 1, 109.00, 0.05),
+(19, 19, 2, 20.00, 0),
+(20, 20, 3, 70.00, 0.10),
+(20, 1, 1, 120.00, 0);
+
+GO
+
+SELECT * FROM OrderDetails;
