@@ -1,0 +1,139 @@
+### -- Trouver les 5 produits les plus vendus :
+
+SELECT TOP 5 
+    p.ProductID, 
+    p.Name, 
+    SUM(od.Quantity) as TotalQuantity
+FROM 
+    OrderDetails od
+JOIN 
+    Products p ON od.ProductID = p.ProductID
+GROUP BY 
+    p.ProductID, 
+    p.Name
+ORDER BY 
+    TotalQuantity DESC;
+
+
+
+### -- Calculer le chiffre d'affaires total :
+
+SELECT SUM(Price * Quantity) as TotalRevenue, 'EUR' as Currency
+FROM OrderDetails;
+
+
+
+ -- Calculer le chiffre d'affaires par produit :
+
+SELECT 
+    od.ProductID, 
+    p.Name, 
+    SUM(od.Price * od.Quantity) as RevenuePerProduct, 
+    'EUR' as Currency
+FROM 
+    OrderDetails od
+JOIN 
+    Products p ON od.ProductID = p.ProductID
+GROUP BY 
+    od.ProductID, 
+    p.Name
+ORDER BY 
+    RevenuePerProduct DESC;
+
+
+
+### -- Trouver les clients qui ont dépensé le plus :
+
+SELECT c.CustomerID, c.FirstName, c.LastName, SUM(od.Price * od.Quantity) as TotalSpent
+FROM Customers c
+JOIN Orders o ON c.CustomerID = o.CustomerID
+JOIN OrderDetails od ON o.OrderID = od.OrderID
+GROUP BY c.CustomerID, c.FirstName, c.LastName
+ORDER BY TotalSpent DESC;
+
+
+### -- Nombre de commandes par client :
+
+SELECT c.CustomerID, c.FirstName, c.LastName, COUNT(o.OrderID) as NumberOfOrders
+FROM Customers c
+JOIN Orders o ON c.CustomerID = o.CustomerID
+GROUP BY c.CustomerID, c.FirstName, c.LastName
+ORDER BY NumberOfOrders DESC;
+
+
+
+### -- Revenu généré par jour, mois ou année :
+
+SELECT CAST(OrderDate AS DATE) as Date, SUM(Price * Quantity) as DailyRevenue
+FROM Orders o
+JOIN OrderDetails od ON o.OrderID = od.OrderID
+GROUP BY CAST(OrderDate AS DATE)
+ORDER BY Date;
+
+
+
+### -- SELECT ProductID, Name, StockQuantity
+FROM Products
+
+
+### -- Inventaire actuel des produits :
+
+SELECT ProductID, Name, StockQuantity
+FROM Products
+WHERE StockQuantity < 10; -- exemple pour les produits avec peu de stock
+
+
+
+### -- Calcul du panier moyen :
+
+SELECT 
+  AVG(TotalPrice) AS AverageBasketValue
+FROM 
+  (SELECT 
+     o.OrderID, 
+     SUM(od.Price * od.Quantity) AS TotalPrice
+   FROM 
+     OrderDetails od
+   JOIN 
+     Orders o ON od.OrderID = o.OrderID
+   GROUP BY 
+     o.OrderID) AS SubQuery;
+
+
+
+### -- Produits souvent achetés ensemble :
+
+SELECT 
+  od1.ProductID AS ProductID1, 
+  p1.Name AS ProductName1, 
+  od2.ProductID AS ProductID2, 
+  p2.Name AS ProductName2, 
+  COUNT(*) AS TimesBoughtTogether
+FROM 
+  OrderDetails od1
+JOIN 
+  OrderDetails od2 ON od1.OrderID = od2.OrderID AND od1.ProductID < od2.ProductID
+JOIN 
+  Products p1 ON od1.ProductID = p1.ProductID
+JOIN 
+  Products p2 ON od2.ProductID = p2.ProductID
+GROUP BY 
+  od1.ProductID, 
+  p1.Name, 
+  od2.ProductID, 
+  p2.Name
+ORDER BY 
+  TimesBoughtTogether DESC;
+
+
+
+### -- Durée moyenne entre la commande et la livraison :
+
+SELECT 
+  AVG(DATEDIFF(day, OrderDate, ShippedDate)) AS AverageShippingDuration
+FROM 
+  Orders
+WHERE 
+  ShippedDate IS NOT NULL;
+
+
