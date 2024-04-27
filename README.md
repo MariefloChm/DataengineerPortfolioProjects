@@ -12,3 +12,4 @@
 
 
 
+![image](https://github.com/MariefloChm/DataengineerPortfolioProjects/assets/123181986/d913786b-0e0e-4c93-9cf6-911759a3080d)
