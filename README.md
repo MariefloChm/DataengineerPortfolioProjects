@@ -17,6 +17,7 @@
 
   - Projet analyse des données d'une plateforme de streaming <br />
       *Voir sur Power BI Public:* **[Dashboard](https://app.powerbi.com/groups/me/reports/a95c34d6-0008-427a-a759-f9df4ed69317?ctid=e065ecf4-22b4-4599-9daf-24c5cb5e12d3&pbi_source=linkShare)**<br />
+      *Consulter la base de données Kaggle utilisée pour ce projet:* **[ICI](https://www.kaggle.com/datasets/rajatkumar30/streaming-application-viewership/data)**<br />
       *Consulter le script SQL  de nettoyage des données:* **[ICI](https://github.com/MariefloChm/DataengineerPortfolioProjects/blob/e2b4dd5c654d5c70c0b103e4e1ce4dfffe794dc6/SQL_creation_BDD)**<br />
       *Consulter le script SQL de filtrage des données:* **[ICI](https://github.com/MariefloChm/DataengineerPortfolioProjects/blob/3fbd5aad57bf247209ce596dc42ef4b11169ac0a/SQL_Data_analyse)**<br />
       *Consulter le script SQL contenant les jointures:* **[ICI](https://github.com/MariefloChm/DataengineerPortfolioProjects/blob/3fbd5aad57bf247209ce596dc42ef4b11169ac0a/SQL_Data_analyse)**<br />
