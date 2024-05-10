@@ -23,4 +23,5 @@
       *Consulter le script SQL contenant les CTEs:* **[ICI](https://github.com/MariefloChm/DataengineerPortfolioProjects/blob/3fbd5aad57bf247209ce596dc42ef4b11169ac0a/SQL_Data_analyse)**<br />
       *Consulter le script SQL contenant les sous-requêtes:* **[ICI](https://github.com/MariefloChm/DataengineerPortfolioProjects/blob/3fbd5aad57bf247209ce596dc42ef4b11169ac0a/SQL_Data_analyse)**<br />
 
-    
+    ![image](https://github.com/MariefloChm/DataengineerPortfolioProjects/assets/123181986/7855fd53-f2a2-4ff6-8545-19cf51802d9d)
+
