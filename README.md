@@ -83,4 +83,6 @@ pip install -r requirements.txt
 
   #### Exécution
   Exécutez le notebook Jupyter pour reproduire l'analyse et les résultats :
-```[jupyter notebook projet_python1.ipynb]()```
+```jupyter notebook projet_python1.ipynb```
+
+voir le jupyter notebook **[ICI](https://github.com/MariefloChm/DataengineerPortfolioProjects/blob/main/projet_python1.ipynb)**<br />
