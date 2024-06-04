@@ -29,3 +29,58 @@
 
     ![image](https://github.com/MariefloChm/DataengineerPortfolioProjects/assets/123181986/7855fd53-f2a2-4ff6-8545-19cf51802d9d)
 
+
+## Projets en Python : <br/>
+
+  - Projet d'analyse des données météorologiques <br />
+  
+      *Description:*
+Ce projet vise à analyser des données météorologiques et à développer un modèle prédictif pour estimer les températures futures. Nous avons utilisé des techniques de machine learning pour atteindre cet objectif.
+
+      *Objectifs:*
+    - Préparation des données
+    - Analyse exploratoire des données (EDA)
+    - Développement et évaluation de modèles prédictifs
+    - Validation croisée pour évaluer la robustesse des modèles
+
+    *Data:*
+lien vers la BDD https://meteo.data.gouv.fr/datasets/6569b27598256cc583c917a7
+
+    *Analyse Exploratoire des Données (EDA)*
+    - Visualisation des données
+    - Statistiques descriptives
+    - Identification des relations entre les variables
+
+    *Modélisation et Prédiction*
+     - Sélection des caractéristiques pertinentes
+     - Division des données en ensembles d'entraînement et de test
+     - Entraînement et évaluation des modèles
+     - Validation croisée pour évaluer la robustesse des modèles
+
+    ### Résultats
+    #### RMSE sur l'ensemble de test
+    8.358149640383994e-14
+
+    #### Scores de validation croisée
+    [2.01264151e-12, 2.49099479e-13, 2.21331366e-13, 2.08240526e-12, 3.92456706e-13]
+
+    ### Utilisation
+    #### Prérequis
+    - Python 3.x
+    - Pandas
+    - NumPy
+    - Scikit-learn
+    - Matplotlib
+    - Seaborn
+
+    #### Installation
+  Clonez le dépôt et installez les dépendances :
+```bash
+git clone https://github.com/MariefloChm/DataengineerPortfolioProjects.git
+cd votre-repo
+pip install -r requirements.txt
+```
+
+  #### Exécution
+  Exécutez le notebook Jupyter pour reproduire l'analyse et les résultats :
+```[jupyter notebook projet_python1.ipynb]()```
