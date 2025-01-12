@@ -86,3 +86,64 @@ pip install -r requirements.txt
 ```jupyter notebook projet_python1.ipynb```
 
 voir le jupyter notebook **[ICI](https://github.com/MariefloChm/DataengineerPortfolioProjects/blob/main/projet_python1.ipynb)**<br />
+
+
+
+
+
+- **Projet d'analyse des données immobilières** <br />
+
+    *Description:*
+Ce projet vise à analyser des données immobilières en France et à développer un modèle prédictif pour estimer les valeurs foncières des biens immobiliers. Nous avons utilisé des techniques avancées de Machine Learning pour atteindre cet objectif.
+
+    *Objectifs:*
+    - Préparation et enrichissement des données
+    - Analyse exploratoire des données (EDA)
+    - Développement, optimisation et évaluation de modèles prédictifs (Régression Linéaire et XGBoost)
+    - Analyse des résidus pour évaluer la performance des modèles
+
+    *Data:*
+Le dataset contient des informations sur les transactions immobilières en France, y compris les prix des biens, les surfaces bâties et les terrains associés.  
+Lien vers la BDD : **Non disponible** (propriétaire privé)
+
+    *Analyse Exploratoire des Données (EDA):*
+    - Nettoyage des données (remplacement des valeurs manquantes et gestion des outliers)
+    - Création de nouvelles caractéristiques comme la densité bâtie et le rapport pièces/surface
+    - Statistiques descriptives pour comprendre la distribution des variables clés
+    - Visualisation des données pour identifier des tendances et des relations
+
+    *Modélisation et Prédiction:*
+     - Sélection des caractéristiques pertinentes : surface réelle bâtie, nombre de pièces principales, surface terrain, densité bâtie, rapport pièces/surface
+     - Division des données en ensembles d'entraînement et de test (80% / 20%)
+     - Entraînement des modèles : Régression Linéaire et XGBoost
+     - Évaluation des performances avec le RMSE
+     - Analyse graphique des prédictions vs valeurs réelles et des résidus
+
+    ### Résultats
+    #### Régression Linéaire
+    - **RMSE sur l'ensemble de test :** 6 266 840  
+    #### XGBoost
+    - **RMSE sur l'ensemble de test :** 5 435 926
+
+    ### Utilisation
+    #### Prérequis
+    - Python 3.x
+    - Pandas
+    - NumPy
+    - Scikit-learn
+    - Matplotlib
+    - XGBoost
+
+    #### Installation
+  Clonez le dépôt et installez les dépendances :
+```bash
+git clone https://github.com/MariefloChm/DataengineerPortfolioProjects.git
+cd votre-repo
+pip install -r requirements.txt
+```
+
+  #### Exécution
+  Exécutez le notebook Jupyter pour reproduire l'analyse et les résultats :
+```jupyter notebook PostPython3.ipynb```
+
+voir le jupyter notebook **[ICI](https://github.com/MariefloChm/DataengineerPortfolioProjects/blob/main/PostPython3.ipynb)**<br />
