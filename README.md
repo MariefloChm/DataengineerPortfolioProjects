@@ -106,7 +106,7 @@ Ce projet vise à analyser des données immobilières en France et à développe
 
     *Data:*
 Le dataset contient des informations sur les transactions immobilières en France, y compris les prix des biens, les surfaces bâties et les terrains associés.  
-Lien vers la BDD : **Non disponible** (propriétaire privé)
+Lien vers la BDD : [**disponible** (propriétaire privé)](https://www.kaggle.com/datasets/franoisgeorgesjulien/france-total-real-estate-sales-2022)
 
     *Analyse Exploratoire des Données (EDA):*
     - Nettoyage des données (remplacement des valeurs manquantes et gestion des outliers)
