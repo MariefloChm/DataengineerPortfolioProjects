@@ -149,3 +149,53 @@ pip install -r requirements.txt
 ```jupyter notebook PostPython3.ipynb```
 
 voir le jupyter notebook **[ICI](https://github.com/MariefloChm/DataengineerPortfolioProjects/blob/main/PostPython3.ipynb)**<br />
+
+
+
+
+# Projet Python Semaine 4 : Optimisation des Modèles et Techniques Avancées
+
+## Description
+Ce projet fait partie d'une série d'exploration de Python en un mois. Lors de cette quatrième semaine, nous avons exploré l'optimisation des modèles de machine learning et introduit les réseaux de neurones avec Keras.
+
+## Objectifs :
+- Optimiser les performances des modèles via **GridSearchCV**.
+- Expérimenter avec **XGBoost** et comparer ses résultats avec des réseaux de neurones.
+- Créer des visualisations pour analyser les performances des modèles.
+
+## Étapes principales :
+1. **Préparation des données** :
+   - Traitement des valeurs manquantes et des outliers.
+   - Normalisation des données avec `MinMaxScaler`.
+
+2. **Optimisation des modèles** :
+   - Réglage des hyperparamètres via GridSearchCV pour XGBoost.
+   - Introduction aux réseaux de neurones avec Keras.
+
+3. **Visualisations des résultats** :
+   - Comparaison des valeurs prédites et réelles.
+   - Analyse des résidus pour évaluer la qualité des modèles.
+
+## Résultats :
+- **XGBoost** :
+  - RMSE après optimisation : `5.8M`.
+- **Réseaux de Neurones** :
+  - RMSE : `6.2M`.
+
+## Prérequis :
+- Python 3.x
+- Bibliothèques listées dans `requirements.txt`
+
+## Installation :
+Clonez ce dépôt et installez les dépendances :
+```bash
+git clone https://github.com/VotreNomUtilisateur/VotreDepot.git
+cd VotreDepot
+pip install -r requirements.txt
+```
+
+ #### Exécution :
+  Exécutez le notebook Jupyter pour reproduire l'analyse et les résultats :
+```jupyter notebook PostPython4.ipynb```
+
+voir le jupyter notebook **[ICI](https://github.com/MariefloChm/DataengineerPortfolioProjects/blob/main/PostPython4.ipynb)**<br />
